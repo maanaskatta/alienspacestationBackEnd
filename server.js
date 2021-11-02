@@ -15,6 +15,7 @@ const parkingRoutes = require("./routes/parking");
 const photosCategoryRoutes = require("./routes/photosCategory");
 const rentHistoryRoutes = require("./routes/rentHistory");
 const apartmentAmenitiesRoutes = require("./routes/apartmentAmenities");
+const residentHomesRoutes = require("./routes/residentHomes");
 
 const app = express();
 const PORT = 3002;
@@ -34,6 +35,7 @@ app.use("/", parkingRoutes);
 app.use("/", photosCategoryRoutes);
 app.use("/", rentHistoryRoutes);
 app.use("/", apartmentAmenitiesRoutes);
+app.use("/", residentHomesRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);

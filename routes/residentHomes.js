@@ -1,25 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const apartmentAmenitiesController = require("../controllers/apartmentAmenities");
+const residentHomesController = require("../controllers/residentHomes");
 
-router.get(
-  "/getApartmentAmenities",
-  apartmentAmenitiesController.getApartmentAmenities
-);
+router.get("/getResidentHomes", residentHomesController.getResidentHomes);
 
-router.post(
-  "/addApartmentAmenity",
-  apartmentAmenitiesController.addApartmentAmenity
-);
+router.post("/addResidentHome", residentHomesController.addResidentHome);
 
-router.post(
-  "/updateApartmentAmenity",
-  apartmentAmenitiesController.updateApartmentAmenity
-);
-
-router.post(
-  "/deleteApartmentAmenity",
-  apartmentAmenitiesController.deleteApartmentAmenity
-);
+router.post("/deleteResidentHome", residentHomesController.deleteResidentHome);
 
 module.exports = router;
