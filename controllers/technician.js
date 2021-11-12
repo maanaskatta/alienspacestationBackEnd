@@ -13,7 +13,8 @@ const executeQuery = (query, response) => {
 };
 
 const getTechnicians = (request, response) => {
-  let query = "SELECT * FROM technician;";
+  let query =
+    "SELECT * FROM technician INNER JOIN department ON technician.departmentID=department.departmentID;";
   executeQuery(query, response);
 };
 

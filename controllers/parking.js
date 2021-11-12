@@ -18,21 +18,15 @@ const getParkings = (request, response) => {
 };
 
 const addParking = (request, response) => {
-  let { parkingClass, isHandicapped, parkingTagNumber, ResidentID } =
-    request.body;
-  let query = `INSERT INTO parking VALUES ( "${parkingClass}",${isHandicapped}, "${parkingTagNumber}", "${ResidentID}",UUID());`;
+  let { parkingClass, parkingTagNumber, ResidentID } = request.body;
+  let query = `INSERT INTO parking VALUES ( "${parkingClass}", "${parkingTagNumber}", "${ResidentID}",UUID());`;
   executeQuery(query, response);
 };
 
 const updateParking = (request, response) => {
-  let {
-    ParkingLotID,
-    parkingClass,
-    isHandicapped,
-    parkingTagNumber,
-    ResidentID,
-  } = request.body;
-  let query = `UPDATE parking SET parkingClass="${parkingClass}", isHandicapped = ${isHandicapped}, parkingTagNumber="${parkingTagNumber}", parkingTagNumber="${ResidentID}"  WHERE ParkingLotID="${ParkingLotID}";`;
+  let { ParkingLotID, parkingClass, parkingTagNumber, ResidentID } =
+    request.body;
+  let query = `UPDATE parking SET parkingClass="${parkingClass}", parkingTagNumber="${parkingTagNumber}", ResidentID="${ResidentID}"  WHERE ParkingLotID="${ParkingLotID}";`;
   executeQuery(query, response);
 };
 

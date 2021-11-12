@@ -19,7 +19,7 @@ const getFines = (request, response) => {
 
 const addFine = (request, response) => {
   let { unitNumber, description, amount } = request.body;
-  let query = `INSERT INTO fines VALUES ( UUID(),"${unitNumber}","${description}","${amount}");`;
+  let query = `INSERT INTO fines VALUES ( "${unitNumber}","${description}","${amount}", UUID());`;
   executeQuery(query, response);
 };
 

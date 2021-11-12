@@ -13,7 +13,7 @@ const executeQuery = (query, response) => {
 };
 
 const getRentHistories = (request, response) => {
-  let query = "SELECT * FROM rent history;";
+  let query = "SELECT * FROM`rent history`";
   executeQuery(query, response);
 };
 

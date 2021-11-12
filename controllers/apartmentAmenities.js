@@ -12,20 +12,22 @@ const executeQuery = (query, response) => {
   });
 };
 
+const UnitID = "2ed3fc12-40ef-11ec-a835-70b5e89a928c";
+
 const getApartmentAmenities = (request, response) => {
   let query = "SELECT * FROM apartmentamenities;";
   executeQuery(query, response);
 };
 
 const addApartmentAmenity = (request, response) => {
-  let { AmenityName, description, UnitID } = request.body;
-  let query = `INSERT INTO apartmentamenities VALUES ( UUID(),"${AmenityName}","${UnitID}","${description}");`;
+  let { AmenityName } = request.body;
+  let query = `INSERT INTO apartmentamenities VALUES ( UUID(),"${AmenityName}","${UnitID}");`;
   executeQuery(query, response);
 };
 
 const updateApartmentAmenity = (request, response) => {
-  let { AprtAmenityID, AmenityName, description, UnitID } = request.body;
-  let query = `UPDATE apartmentamenities SET AmenityName="${AmenityName}", UnitID="${UnitID}", description = "${description}" WHERE AprtAmenityID="${AprtAmenityID}";`;
+  let { AprtAmenityID, AmenityName } = request.body;
+  let query = `UPDATE apartmentamenities SET AmenityName="${AmenityName}", UnitID="${UnitID}" WHERE AprtAmenityID="${AprtAmenityID}";`;
   executeQuery(query, response);
 };
 

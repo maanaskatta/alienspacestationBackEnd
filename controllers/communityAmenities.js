@@ -18,14 +18,14 @@ const getCommunityAmenities = (request, response) => {
 };
 
 const addCommunityAmenity = (request, response) => {
-  let { AmenityName, description } = request.body;
-  let query = `INSERT INTO communityamenities VALUES ( UUID(),"${AmenityName}","${description}");`;
+  let { AmenityName } = request.body;
+  let query = `INSERT INTO communityamenities VALUES ( UUID(),"${AmenityName}");`;
   executeQuery(query, response);
 };
 
 const updateCommunityAmenity = (request, response) => {
-  let { CommAmenityID, AmenityName, description } = request.body;
-  let query = `UPDATE communityamenities SET AmenityName="${AmenityName}", description = "${description}" WHERE CommAmenityID="${CommAmenityID}";`;
+  let { CommAmenityID, AmenityName } = request.body;
+  let query = `UPDATE communityamenities SET AmenityName="${AmenityName}" WHERE CommAmenityID="${CommAmenityID}";`;
   executeQuery(query, response);
 };
 
