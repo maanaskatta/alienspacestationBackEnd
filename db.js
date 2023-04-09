@@ -1,9 +1,9 @@
-const mysql = require("mysql");
+const mysql = require("mysql2");
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "alienspacestation",
+  host: "bp5ummtdy72thn3xlhqj-mysql.services.clever-cloud.com",
+  user: "uxylynqgcgqtctgm",
+  password: "V5TUEGhpcLHKlQJaQ7si",
+  database: "bp5ummtdy72thn3xlhqj",
 });
 
 if (db) {

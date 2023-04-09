@@ -13,7 +13,8 @@ const executeQuery = (query, response) => {
 };
 
 const getParkings = (request, response) => {
-  let query = "SELECT * FROM parking;";
+  let query =
+    "SELECT * FROM parking INNER JOIN residents ON parking.ResidentID = residents.ResidentID";
   executeQuery(query, response);
 };
 
